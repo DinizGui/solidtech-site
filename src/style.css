@@ -229,6 +229,26 @@ html.lenis body { height: auto; }
 }
 .accent { color: var(--c-accent); }
 
+/* word rotator — usa inline-grid pra empilhar palavra atual e próxima
+   na MESMA célula (grid-area 1/1). Largura acompanha a maior palavra,
+   sem pular layout no swap. */
+.rotator {
+  position: relative;
+  display: inline-grid;
+  vertical-align: baseline;
+  overflow: hidden;
+  padding-bottom: 0.18em;
+  margin-bottom: -0.18em;
+  line-height: inherit;
+}
+.rotator__word {
+  grid-area: 1 / 1;
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform, opacity;
+  line-height: inherit;
+}
+
 /* split-text wrapping with descender room.
    .st-word keeps a whole word from breaking mid-letter — browser can
    only wrap at the regular spaces BETWEEN words. */
