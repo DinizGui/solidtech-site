@@ -229,24 +229,28 @@ html.lenis body { height: auto; }
 }
 .accent { color: var(--c-accent); }
 
-/* word rotator — usa inline-grid pra empilhar palavra atual e próxima
-   na MESMA célula (grid-area 1/1). Largura acompanha a maior palavra,
-   sem pular layout no swap. */
+/* word rotator — inline-grid com grid-template EXPLÍCITO: 1 linha de
+   altura igual à line-height, 1 coluna que se ajusta à maior palavra.
+   Sem template explícito o browser pode auto-flow as duas palavras pra
+   colunas distintas, fazendo elas aparecerem lado a lado em vez de
+   empilhadas. grid-area: 1/1/2/2 garante a mesma célula pras duas. */
 .rotator {
   position: relative;
   display: inline-grid;
+  grid-template-rows: 1em;
+  grid-template-columns: max-content;
   vertical-align: baseline;
   overflow: hidden;
-  padding-bottom: 0.18em;
-  margin-bottom: -0.18em;
-  line-height: inherit;
+  line-height: 1;
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
 }
 .rotator__word {
-  grid-area: 1 / 1;
+  grid-area: 1 / 1 / 2 / 2;
   display: inline-block;
   white-space: nowrap;
-  will-change: transform, opacity;
-  line-height: inherit;
+  will-change: transform;
+  line-height: 1;
 }
 
 /* split-text wrapping with descender room.

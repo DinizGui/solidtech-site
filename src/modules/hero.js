@@ -17,8 +17,7 @@ let cycleIdx = 0;
 function resetRotator() {
   const rot = document.getElementById("hero-rotator");
   if (!rot) return;
-  // limpa qualquer char-wrap que a split-text deixou pra trás e replanta
-  // o estado inicial com a primeira palavra
+  // limpa qualquer char-wrap que a split-text deixou pra trás
   rot.innerHTML = `<span class="rotator__word accent is-current">${ROTATING_WORDS[0]}</span>`;
 }
 
@@ -35,30 +34,32 @@ function swapRotator() {
   next.textContent = ROTATING_WORDS[cycleIdx];
   rot.appendChild(next);
 
+  // slot-reel: ambas as palavras se movem em sincronia (mesmo time start,
+  // mesma duração, mesmo ease). Sem opacity transition — só translateY —
+  // pra nunca ter o momento "as duas parcialmente visíveis em opacidade
+  // intermediária" que dava aquele mix smeared horrível.
   gsap
-    .timeline()
-    .to(current, {
-      yPercent: -110,
-      opacity: 0,
-      duration: 0.55,
-      ease: "power3.in",
+    .timeline({
+      onComplete: () => {
+        current.remove();
+        next.classList.add("is-current");
+      },
     })
+    .to(
+      current,
+      { yPercent: -100, duration: 0.65, ease: "expo.inOut" },
+      0
+    )
     .fromTo(
       next,
-      { yPercent: 110, opacity: 0 },
-      { yPercent: 0, opacity: 1, duration: 0.7, ease: "power3.out" },
-      "-=0.35"
-    )
-    .add(() => {
-      current.remove();
-      next.classList.add("is-current");
-    });
+      { yPercent: 100 },
+      { yPercent: 0, duration: 0.65, ease: "expo.inOut" },
+      0
+    );
 }
 
 function startCycle() {
   setInterval(() => {
-    // não anima quando aba está em background — economiza CPU e evita
-    // pilha de swaps acumulados ao voltar
     if (document.visibilityState === "visible") swapRotator();
   }, SWAP_INTERVAL_MS);
 }
