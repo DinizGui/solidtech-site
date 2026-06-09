@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0A0A0A" />
+    <meta
+      name="description"
+      content="Solid Tech — software house de Curitiba. A melhor tecnologia é a que vende."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Solid Tech — A melhor tecnologia é a que vende.</title>
+  </head>
+  <body>
+    <!-- custom cursor -->
+    <div class="cursor" aria-hidden="true">
+      <div class="cursor__dot"></div>
+    </div>
+
+    <!-- preloader -->
+    <div class="preloader" id="preloader">
+      <div class="preloader__inner">
+        <span class="preloader__label">SOLID TECH</span>
+        <span class="preloader__count" id="preloader-count">000</span>
+      </div>
+      <div class="preloader__bar"><span></span></div>
+    </div>
+
+    <!-- grain noise overlay -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a href="#top" class="topbar__brand" data-cursor>
+        <span class="dot"></span>SOLID TECH
+      </a>
+      <nav class="topbar__nav">
+        <a href="#sobre" data-cursor>Sobre</a>
+        <a href="#servicos" data-cursor>Serviços</a>
+        <a href="#cases" data-cursor>Cases</a>
+        <a href="#cta" data-cursor>Contato</a>
+      </nav>
+      <span class="topbar__loc">CWB · BR / 2026</span>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero" data-section>
+        <video
+          class="hero__bg"
+          src="/solidtech-bg.mp4"
+          poster="/solidtech-poster.jpg"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+        ></video>
+        <div class="hero__veil" aria-hidden="true"></div>
+
+        <!-- corner UI -->
+        <svg class="corner corner--tl" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M2 14 L2 2 L14 2" stroke="currentColor" stroke-width="1" fill="none" />
+        </svg>
+        <svg class="corner corner--tr" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M26 2 L38 2 L38 14" stroke="currentColor" stroke-width="1" fill="none" />
+        </svg>
+        <svg class="corner corner--bl" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M2 26 L2 38 L14 38" stroke="currentColor" stroke-width="1" fill="none" />
+        </svg>
+        <svg class="corner corner--br" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M26 38 L38 38 L38 26" stroke="currentColor" stroke-width="1" fill="none" />
+        </svg>
+
+        <div class="hero__meta">
+          <span class="line"></span>
+          <span>Software house · est. 2020</span>
+        </div>
+
+        <h1 class="hero__title" id="hero-title">
+          A melhor tecnologia é a que <span class="accent">vende.</span>
+        </h1>
+
+        <div class="hero__bottom">
+          <a
+            href="#cta"
+            class="btn btn--big"
+            data-magnetic
+            data-cursor="big"
+          >
+            <span>Fale com a gente</span>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <path d="M3 9h12M10 4l5 5-5 5" stroke="currentColor" stroke-width="1.6" />
+            </svg>
+          </a>
+          <div class="hero__signal">
+            <span class="hero__signal-dot"></span>
+            <p>
+              de Curitiba para o Brasil, EUA &amp; Canadá
+              <span>resposta em &lt; 24h em dias úteis</span>
+            </p>
+          </div>
+        </div>
+
+        <span class="hero__scroll">
+          <span class="hero__scroll-line"></span>
+          Scroll
+        </span>
+      </section>
+
+      <!-- MARQUEE DUPLO -->
+      <section class="marquee-wrap" aria-hidden="true">
+        <div class="marquee">
+          <div class="marquee__track" id="marquee-1"></div>
+        </div>
+        <div class="marquee marquee--reverse">
+          <div class="marquee__track" id="marquee-2"></div>
+        </div>
+      </section>
+
+      <!-- SOBRE -->
+      <section class="sobre" id="sobre" data-section>
+        <span class="sec-id">/01</span>
+        <div class="sobre__grid">
+          <div class="sobre__left">
+            <p class="kicker">Sobre</p>
+            <p class="sobre__text" id="sobre-text">
+              Somos uma software house com base em Curitiba e mais de cinco anos no
+              mercado, entregando produtos digitais para clientes no Brasil, EUA e
+              Canadá. Da landing que converte ao ERP sob medida, construímos
+              tecnologia que move negócio — não tecnologia que enfeita slide.
+            </p>
+          </div>
+          <aside class="sobre__right">
+            <div class="sobre__pill">
+              <span class="rule"></span>
+              <p class="kicker">Base</p>
+              <p class="sobre__pill-value">Curitiba/PR</p>
+            </div>
+            <div class="sobre__pill">
+              <span class="rule"></span>
+              <p class="kicker">Mercados</p>
+              <p class="sobre__pill-value">BR · EUA · CAN</p>
+            </div>
+            <div class="sobre__pill">
+              <span class="rule"></span>
+              <p class="kicker">Time</p>
+              <p class="sobre__pill-value">Full-stack</p>
+            </div>
+            <div class="sobre__pill">
+              <span class="rule"></span>
+              <p class="kicker">Filosofia</p>
+              <p class="sobre__pill-value">Vender.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- SOLID STAGE — letras em grid 5 colunas, vídeo parallax atrás -->
+      <section class="stage" aria-label="Solid">
+        <video
+          class="stage__bg"
+          src="/solidtech-solid.mp4"
+          poster="/solidtech-solid-poster.jpg"
+          autoplay
+          muted
+          loop
+          playsinline
+          aria-hidden="true"
+        ></video>
+        <div class="stage__veil" aria-hidden="true"></div>
+
+        <div class="stage__top">
+          <span class="line"></span>
+          <span>Capítulo intermezzo</span>
+        </div>
+
+        <!-- linhas amarelas finas acima de cada letra -->
+        <div class="stage__rules" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <!-- letras em grid 5 colunas, sempre cabem -->
+        <div class="stage__row">
+          <span class="stage__letter" data-letter="S">S</span>
+          <span class="stage__letter" data-letter="O">O</span>
+          <span class="stage__letter" data-letter="L">L</span>
+          <span class="stage__letter is-accent" data-letter="I">I</span>
+          <span class="stage__letter" data-letter="D">D</span>
+        </div>
+
+        <!-- legenda inferior por letra -->
+        <div class="stage__legend" aria-hidden="true">
+          <span>Sólido</span>
+          <span>Original</span>
+          <span>Local</span>
+          <span>Íntegro</span>
+          <span>Direto</span>
+        </div>
+
+        <div class="stage__caption">
+          <span class="rule"></span>
+          <p>
+            <span>Sólido por natureza.</span>
+            <span>Construindo desde 2020.</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- SERVIÇOS -->
+      <section class="servicos" id="servicos" data-section>
+        <span class="sec-id">/02</span>
+        <header class="servicos__head">
+          <p class="kicker">Serviços</p>
+          <h2 class="h-big">O que fazemos<span class="accent">.</span></h2>
+          <p class="servicos__sub">
+            Seis serviços, uma filosofia: cada linha de código precisa justificar
+            sua existência no resultado do cliente.
+          </p>
+        </header>
+        <div class="servicos__grid">
+          <article class="card" data-cursor>
+            <span class="card__num">01</span>
+            <h3>Sites &amp; Landing Pages</h3>
+            <p>Performance, SEO e copy que converte. Da identidade ao deploy.</p>
+            <span class="card__arrow">→</span>
+          </article>
+          <article class="card" data-cursor>
+            <span class="card__num">02</span>
+            <h3>Sistemas Sob Medida</h3>
+            <p>ERPs, CRMs e plataformas internas. Construídos pra durar e escalar.</p>
+            <span class="card__arrow">→</span>
+          </article>
+          <article class="card" data-cursor>
+            <span class="card__num">03</span>
+            <h3>Aplicativos Mobile</h3>
+            <p>iOS e Android com React Native. Uma base, duas lojas, uma equipe.</p>
+            <span class="card__arrow">→</span>
+          </article>
+          <article class="card" data-cursor>
+            <span class="card__num">04</span>
+            <h3>E-commerce</h3>
+            <p>Lojas que vendem 24/7. Integração com gateways, ERP e logística.</p>
+            <span class="card__arrow">→</span>
+          </article>
+          <article class="card" data-cursor>
+            <span class="card__num">05</span>
+            <h3>Automação com IA</h3>
+            <p>Agentes, RAG e fluxos que cortam custo e tempo de equipe.</p>
+            <span class="card__arrow">→</span>
+          </article>
+          <article class="card" data-cursor>
+            <span class="card__num">06</span>
+            <h3>WhatsApp &amp; Bots</h3>
+            <p>Atendimento e vendas pelo WhatsApp Business integrado ao seu CRM.</p>
+            <span class="card__arrow">→</span>
+          </article>
+        </div>
+      </section>
+
+      <!-- NÚMEROS -->
+      <section class="numeros" data-section>
+        <span class="sec-id">/03</span>
+        <p class="kicker">Em números</p>
+        <div class="numeros__grid">
+          <div class="num">
+            <span class="num__rule"></span>
+            <div class="num__row">
+              <span class="num__val" data-target="5" data-decimals="0">0</span>
+              <span class="num__plus">+</span>
+            </div>
+            <p>anos no mercado</p>
+          </div>
+          <div class="num">
+            <span class="num__rule"></span>
+            <div class="num__row">
+              <span class="num__val" data-target="50" data-decimals="0">0</span>
+              <span class="num__plus">+</span>
+            </div>
+            <p>projetos entregues</p>
+          </div>
+          <div class="num">
+            <span class="num__rule"></span>
+            <div class="num__row">
+              <span class="num__val" data-target="3" data-decimals="0">0</span>
+            </div>
+            <p>países atendidos</p>
+          </div>
+          <div class="num">
+            <span class="num__rule"></span>
+            <div class="num__row">
+              <span class="num__val" data-target="100" data-decimals="0">0</span>
+              <span class="num__plus">%</span>
+            </div>
+            <p>sob medida</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CASES (horizontal scroll pinned) -->
+      <section class="cases" id="cases">
+        <div class="cases__inner">
+          <div class="cases__head">
+            <span class="sec-id">/04</span>
+            <div>
+              <p class="kicker">Cases</p>
+              <h2 class="h-big">Coisas que<br />construímos<span class="accent">.</span></h2>
+            </div>
+            <p class="cases__hint">Role para o lado →</p>
+          </div>
+          <div class="cases__track" id="cases-track">
+            <article class="case" data-cursor>
+              <div class="case__thumb case__thumb--1">
+                <div class="case__mock case__mock--health">
+                  <span class="case__mock-tag">+</span>
+                  <span class="case__mock-line"></span>
+                  <span class="case__mock-line"></span>
+                  <span class="case__mock-line short"></span>
+                </div>
+                <span class="case__tag">Saúde · Multi-plataforma</span>
+              </div>
+              <div class="case__meta">
+                <h3>OKI Health</h3>
+                <p>Plataforma com backend, app nativo e web. Telemedicina e prontuário integrados.</p>
+              </div>
+            </article>
+
+            <article class="case" data-cursor>
+              <div class="case__thumb case__thumb--2">
+                <div class="case__mock case__mock--map">
+                  <span class="case__mock-route"></span>
+                  <span class="case__mock-pin a"></span>
+                  <span class="case__mock-pin b"></span>
+                </div>
+                <span class="case__tag">Mobilidade · 3 apps</span>
+              </div>
+              <div class="case__meta">
+                <h3>Unit</h3>
+                <p>Plataforma de mobilidade com admin, app do usuário e app do entregador.</p>
+              </div>
+            </article>
+
+            <article class="case" data-cursor>
+              <div class="case__thumb case__thumb--3">
+                <div class="case__mock case__mock--fleet">
+                  <span class="case__mock-graph"></span>
+                  <span class="case__mock-bar a"></span>
+                  <span class="case__mock-bar b"></span>
+                  <span class="case__mock-bar c"></span>
+                  <span class="case__mock-bar d"></span>
+                </div>
+                <span class="case__tag">Frotas · INMETRO</span>
+              </div>
+              <div class="case__meta">
+                <h3>Moss</h3>
+                <p>Suite de gestão de frota e tacógrafo. INMETRO, financeiro e operação integrados.</p>
+              </div>
+            </article>
+
+            <article class="case" data-cursor>
+              <div class="case__thumb case__thumb--4">
+                <div class="case__mock case__mock--ecg">
+                  <svg viewBox="0 0 200 60" preserveAspectRatio="none">
+                    <polyline
+                      points="0,30 30,30 35,18 40,30 45,42 50,10 55,55 60,30 90,30 95,22 100,30 105,38 110,30 200,30"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                </div>
+                <span class="case__tag">Educação · Web</span>
+              </div>
+              <div class="case__meta">
+                <h3>ECG+</h3>
+                <p>Plataforma de educação médica em eletrocardiografia. Conteúdo, prática e visão computacional.</p>
+              </div>
+            </article>
+
+            <article class="case" data-cursor>
+              <div class="case__thumb case__thumb--5">
+                <div class="case__mock case__mock--finance">
+                  <span class="case__mock-amount">R$ 247,8K</span>
+                  <span class="case__mock-trend">+12,4% ▲</span>
+                  <span class="case__mock-rule"></span>
+                  <span class="case__mock-rule short"></span>
+                </div>
+                <span class="case__tag">SaaS · Multi-tenant</span>
+              </div>
+              <div class="case__meta">
+                <h3>Financeiro Moss</h3>
+                <p>ERP financeiro multi-tenant com integração Bling, conciliação e DRE em tempo real.</p>
+              </div>
+            </article>
+
+            <article class="case case--more" data-cursor>
+              <div class="case__more">
+                <p class="kicker">E mais</p>
+                <p class="case__more-num">+45</p>
+                <p class="case__more-label">projetos entregues<br />em 5 anos</p>
+                <a href="#cta" class="case__more-cta">Ver no portfolio →</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section class="cta" id="cta" data-section>
+        <video
+          class="cta__bg"
+          src="/solidtech-bg.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          aria-hidden="true"
+        ></video>
+        <div class="cta__veil" aria-hidden="true"></div>
+
+        <span class="sec-id sec-id--light">/05</span>
+        <p class="kicker">Vamos conversar</p>
+        <h2 class="cta__headline" id="cta-headline">
+          Vamos construir algo que <span class="accent">vende?</span>
+        </h2>
+
+        <div class="cta__actions">
+          <a
+            href="https://wa.me/5541000000000?text=Oi%20Solid%20Tech%2C%20quero%20conversar%20sobre%20um%20projeto."
+            target="_blank"
+            rel="noopener"
+            class="btn btn--cta"
+            data-magnetic
+            data-cursor="big"
+          >
+            <span>Falar no WhatsApp</span>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <path d="M3 9h12M10 4l5 5-5 5" stroke="currentColor" stroke-width="1.6" />
+            </svg>
+          </a>
+          <a href="mailto:contato@solidtech.digital" class="cta__email" data-cursor>
+            contato@solidtech.digital
+          </a>
+        </div>
+
+        <p class="cta__sub">
+          Resposta em até 24h em dias úteis. Sem compromisso.
+        </p>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer__row">
+          <div class="footer__col">
+            <p class="footer__brand">SOLID TECH</p>
+            <p class="footer__muted">Curitiba/PR · Brasil</p>
+            <p class="footer__muted">Atendendo BR · EUA · CAN</p>
+          </div>
+          <div class="footer__col">
+            <p class="footer__heading">Mapa</p>
+            <a href="#sobre" data-cursor>Sobre</a>
+            <a href="#servicos" data-cursor>Serviços</a>
+            <a href="#cases" data-cursor>Cases</a>
+            <a href="#cta" data-cursor>Contato</a>
+          </div>
+          <div class="footer__col">
+            <p class="footer__heading">Contato</p>
+            <a href="mailto:contato@solidtech.digital" data-cursor>contato@solidtech.digital</a>
+            <a href="https://wa.me/5541000000000" target="_blank" rel="noopener" data-cursor>WhatsApp →</a>
+            <p class="footer__muted">CNPJ XX.XXX.XXX/0001-XX</p>
+          </div>
+        </div>
+
+        <div class="footer__mark" aria-hidden="true">SOLID TECH</div>
+
+        <div class="footer__bottom">
+          <span>© 2026 Solid Tech · Todos os direitos reservados.</span>
+          <span class="footer__motto">A melhor tecnologia é a que vende.</span>
+        </div>
+      </footer>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
